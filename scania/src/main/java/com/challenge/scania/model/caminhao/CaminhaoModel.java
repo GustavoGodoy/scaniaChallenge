@@ -20,7 +20,7 @@ public class CaminhaoModel {
     private Long id_caminhao;
 
     @OneToOne
-    @JoinColumn(name = "id_fabricante")
+    @JoinColumn(nullable = false, name = "id_fabricante")
     private FabricanteModel id_fabricante;
 
     @Column(nullable = false, name = "nm_caminhao")

@@ -1,0 +1,86 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js}" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Delta Tech inc.</title>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+    <meta name="theme-color" content="#712cf9">
+</head>
+<body class="text-center">
+
+<link href="../static/css/index.css" th:href="@{css/index.css}" rel="stylesheet">
+<main class="form-signin w-100 m-auto">
+    <div class="card" style="width: 18rem;">
+        <img th:src="@{/assets/scania.jpg}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><a th:text="${caminhao.getModelo()}"></a></h5>
+            <p class="card-text"><a th:text="${caminhao.getTipo_produto()}"></a></p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>ID do Caminhao: </b><a th:text="${caminhao.getId_caminhao()}"></a></li>
+            <li class="list-group-item"><b>Saida: </b><a th:text="${caminhao.getSaida()}"></a> </li>
+            <li class="list-group-item"><b>Chegada: </b> <a th:text="${caminhao.getChegada()}"></a></li>
+        </ul>
+    </div>
+    <button class="w-100 btn btn-lg mt-2" style="background-color: #2a2a2a; font-size: larger" type="submit"><a th:href="@{/caminhao}" style="text-decoration: none; color: #ffa500;"> Buscar outro caminhao</a></button>
+    <button class="w-100 btn btn-lg mt-2" style=" background-color: #ffa500" type="submit"><a th:href="@{/}" style="text-decoration: none; color: black;">Voltar ao inicio</a></button>
+</main>
+
+
+<script th:src="@{https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js}" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js}" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
